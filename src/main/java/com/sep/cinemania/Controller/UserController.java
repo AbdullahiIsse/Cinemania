@@ -1,10 +1,12 @@
 package com.sep.cinemania.Controller;
 
 import com.sep.cinemania.Dao.UserRepository;
+import com.sep.cinemania.Entities.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.List;
 
 @RestController
 public class UserController {
@@ -13,8 +15,8 @@ public class UserController {
     private UserRepository user;
 
     @GetMapping("/")
-    public String getUserName() {
-        return "test";
+    public List<User> getUserName() {
+        return (List<User>) user.findAll();
     }
 
 
