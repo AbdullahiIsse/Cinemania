@@ -8,6 +8,5 @@ ENV db_password=42323087Ab1
 WORKDIR /usr/local/bin/
 COPY . /usr/local/bin/
 RUN mvn package
-EXPOSE 80
 ENTRYPOINT ["java","-jar","target/Cinemania-0.0.1-SNAPSHOT.jar"]
 
