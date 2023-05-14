@@ -27,14 +27,13 @@ public class UserController {
     }
 
     @GetMapping("/user")
-    @Operation(summary = "Get all users")
+    @Operation(summary = "Get all the users")
     @ApiResponse(responseCode = "200",
             description = "OK",
             content = @Content(mediaType = "application/json", schema = @Schema(implementation = User.class))
     )
     public ResponseEntity<List<User>> getUserName() {
         List<User> users = (List<User>) user.findAll();
-        user.save(new User(3,"cicd"));
         return users.isEmpty() ? ResponseEntity.noContent().build() : ResponseEntity.ok(users);
     }
 
