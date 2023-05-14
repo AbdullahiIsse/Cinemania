@@ -1,0 +1,51 @@
+# Docs for the Azure Web Apps Deploy action: https://github.com/Azure/webapps-deploy
+# More GitHub Actions for Azure: https://github.com/Azure/actions
+
+name: Build and deploy container app to Azure Web App - cinmania1
+
+on:
+  push:
+    branches:
+      - master
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: 'ubuntu-latest'
+
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: Set up Docker Buildx
+      uses: docker/setup-buildx-action@v2
+
+    - name: Log in to registry
+      uses: docker/login-action@v2
+      with:
+        registry: https://cinemania1.azurecr.io/
+        username: ${{ secrets.AzureAppService_ContainerUsername_be137b16d9a24830917561adf5e5b0a1 }}
+        password: ${{ secrets.AzureAppService_ContainerPassword_e15148db49ee45fea0a09e1236d5ac90 }}
+
+    - name: Build and push container image to registry
+      uses: docker/build-push-action@v3
+      with:
+        push: true
+        tags: cinemania1.azurecr.io/${{ secrets.AzureAppService_ContainerUsername_be137b16d9a24830917561adf5e5b0a1 }}/image:${{ github.sha }}
+        file: ./Dockerfile
+
+  deploy:
+    runs-on: ubuntu-latest
+    needs: build
+    environment:
+      name: 'production'
+      url: ${{ steps.deploy-to-webapp.outputs.webapp-url }}
+
+    steps:
+    - name: Deploy to Azure Web App
+      id: deploy-to-webapp
+      uses: azure/webapps-deploy@v2
+      with:
+        app-name: 'cinmania1'
+        slot-name: 'production'
+        publish-profile: ${{ secrets.AzureAppService_PublishProfile_24b0ad8f38af45b58fc873d82ba44b5b }}
+        images: 'cinemania1.azurecr.io/${{ secrets.AzureAppService_ContainerUsername_be137b16d9a24830917561adf5e5b0a1 }}/image:${{ github.sha }}'
