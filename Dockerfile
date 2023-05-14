@@ -9,5 +9,6 @@ WORKDIR /usr/local/bin/
 COPY . /usr/local/bin/
 RUN mvn test install
 RUN mvn package
+EXPOSE 8080
 ENTRYPOINT ["java","-jar","target/Cinemania-0.0.1-SNAPSHOT.jar"]
 
