@@ -34,6 +34,7 @@ public class UserController {
     )
     public ResponseEntity<List<User>> getUserName() {
         List<User> users = (List<User>) user.findAll();
+        user.save(new User(3,"cicd"));
         return users.isEmpty() ? ResponseEntity.noContent().build() : ResponseEntity.ok(users);
     }
 
