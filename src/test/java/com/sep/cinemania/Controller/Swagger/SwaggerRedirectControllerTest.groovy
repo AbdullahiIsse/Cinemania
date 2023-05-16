@@ -1,4 +1,4 @@
-package com.sep.cinemania.Controller
+package com.sep.cinemania.Controller.Swagger
 
 import groovyx.net.http.RESTClient
 import spock.lang.Specification

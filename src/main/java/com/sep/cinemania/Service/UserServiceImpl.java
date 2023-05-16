@@ -23,18 +23,18 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public User findUserByEmail(String email) {
-        return this.user.findUserByEmail(email);
+        return user.findUserByEmail(email);
     }
 
     @Override
-    public User createUser(User user) {
-        var userInDb = findUserByEmail(user.getEmail());
+    public User createUser(User createdUser) {
+        var userInDb = findUserByEmail(createdUser.getEmail());
         Optional.ofNullable(userInDb).ifPresent(user1 -> {
-            if (user1.getEmail().equals(user.getEmail()) || user1.getId().equals(user.getId())) {
+            if (user1.getEmail().equals(createdUser.getEmail()) || user1.getId().equals(createdUser.getId())) {
                 throw new UserAlreadyExistException();
             }
         });
-        return this.user.save(user);
+        return user.save(createdUser);
     }
 
 
