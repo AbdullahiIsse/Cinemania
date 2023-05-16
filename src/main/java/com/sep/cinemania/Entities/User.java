@@ -1,6 +1,9 @@
 package com.sep.cinemania.Entities;
 
 import jakarta.persistence.*;
+import jakarta.validation.constraints.Email;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -14,9 +17,13 @@ import lombok.Setter;
 @NoArgsConstructor
 public class User {
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "user_generator")
-    @SequenceGenerator(name = "user_generator", sequenceName = "user_account_seq", allocationSize = 1)
     @Column(name = "user_id")
-    private long id;
-    private String username;
+    @NotBlank(message = "id is mandatory")
+    private String id;
+    @Column(name = "displayname")
+    @NotBlank(message = "displayname is mandatory")
+    private String displayName;
+    @NotBlank(message = "email is mandatory")
+    @Email
+    private String email;
 }
