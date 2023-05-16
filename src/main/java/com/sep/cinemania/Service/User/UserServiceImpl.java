@@ -3,7 +3,6 @@ package com.sep.cinemania.Service.User;
 import com.sep.cinemania.Dao.User.UserRepository;
 import com.sep.cinemania.Entities.User;
 import com.sep.cinemania.Exception.User.UserAlreadyExistException;
-import com.sep.cinemania.Service.User.UserService;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -38,5 +37,9 @@ public class UserServiceImpl implements UserService {
         return user.save(createdUser);
     }
 
+    @Override
+    public Optional<User> findUserById(String id) {
+        return user.findById(id);
+    }
 
 }

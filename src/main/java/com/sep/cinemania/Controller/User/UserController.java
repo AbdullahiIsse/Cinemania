@@ -36,7 +36,7 @@ public class UserController {
     )
     public ResponseEntity<List<User>> getUserName() {
         List<User> users = user.getUserList();
-        return users.isEmpty() ? ResponseEntity.notFound().build() : ResponseEntity.ok(users);
+        return ResponseEntity.ok(users);
     }
 
 

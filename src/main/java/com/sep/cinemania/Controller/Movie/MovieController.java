@@ -2,6 +2,7 @@ package com.sep.cinemania.Controller.Movie;
 
 import com.sep.cinemania.Entities.Movie;
 import com.sep.cinemania.Exception.Movie.MovieAlreadyExistException;
+import com.sep.cinemania.Exception.User.UserDoNotExistException;
 import com.sep.cinemania.Service.Movie.MovieService;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.media.Content;
@@ -35,7 +36,7 @@ public class MovieController {
     )
     public ResponseEntity<List<Movie>> getMovieByUserId(@PathVariable("id") String id) {
         var movieByUser = movieService.findMoviesByUserId(id);
-        return movieByUser.isEmpty() ? ResponseEntity.notFound().build() : ResponseEntity.ok(movieByUser);
+        return ResponseEntity.ok(movieByUser);
     }
 
     @PostMapping
@@ -49,8 +50,8 @@ public class MovieController {
         try {
             var createdMovie = movieService.addMovie(movie);
             return ResponseEntity.status(HttpStatus.CREATED).body(createdMovie);
-        } catch (MovieAlreadyExistException e) {
-            return ResponseEntity.notFound().header("Message", "Movie already exists").build();
+        } catch (MovieAlreadyExistException | UserDoNotExistException e) {
+            return ResponseEntity.notFound().header("Message", "Movie already exists or user doesn't exist").build();
         }
     }
 
