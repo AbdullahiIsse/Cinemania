@@ -8,7 +8,7 @@ class SwaggerRedirectControllerTest extends Specification {
     private RESTClient baseEndpoint
 
     def setup() {
-        baseEndpoint = new RESTClient('http://localhost:8080/')
+        baseEndpoint = new RESTClient('http://localhost:80/')
     }
 
     def "baseEndpoint should redirect to swagger ui when path is '/' "() {

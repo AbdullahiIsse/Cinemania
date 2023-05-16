@@ -1,8 +1,9 @@
-package com.sep.cinemania.Service;
+package com.sep.cinemania.Service.User;
 
-import com.sep.cinemania.Dao.UserRepository;
+import com.sep.cinemania.Dao.User.UserRepository;
 import com.sep.cinemania.Entities.User;
 import com.sep.cinemania.Exception.User.UserAlreadyExistException;
+import com.sep.cinemania.Service.User.UserService;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
