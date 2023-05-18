@@ -20,6 +20,7 @@ import java.util.List;
 @RestController
 @RequestMapping("/api/user")
 @Tag(name = "User API")
+@CrossOrigin(origins = "http://localhost")
 public class UserController {
     private final UserService user;
 
