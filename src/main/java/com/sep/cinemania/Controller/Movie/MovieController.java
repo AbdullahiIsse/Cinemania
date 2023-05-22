@@ -20,7 +20,7 @@ import java.util.List;
 @RestController
 @RequestMapping("/api/movie")
 @Tag(name = "Movie API")
-@CrossOrigin(origins = "http://localhost")
+@CrossOrigin(origins = {"http://localhost", "https://cinemania2.azurewebsites.net"})
 
 public class MovieController {
 
