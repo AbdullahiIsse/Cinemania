@@ -7,6 +7,6 @@ import org.springframework.data.repository.CrudRepository;
 import java.util.List;
 
 public interface FollowerUserMovieJoinRepository extends CrudRepository<FollowerUserMovieJoin,String> {
-    @Query(nativeQuery = true,value = "SELECT follower.user_id AS follower_user_id, follower.followed_id, user_account.displayname, user_account.email, movie.movie_id, movie.title,movie.release_date, movie.vote_average FROM follower INNER JOIN user_account ON follower.followed_id = user_account.user_id INNER JOIN movie ON user_account.user_id = movie.user_id WHERE follower.user_id = ?1")
+    @Query(nativeQuery = true,value = "select user_account.user_id,movie_id,displayname,email,title,release_date,vote_average,image from follower inner join user_account on follower.followed_id = user_account.user_id inner join movie on user_account.user_id = movie.user_id where follower.user_id = ?1")
     List<FollowerUserMovieJoin> getFollowerMovieList(String userId);
 }

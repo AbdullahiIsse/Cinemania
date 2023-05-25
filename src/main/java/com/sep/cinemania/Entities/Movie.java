@@ -3,6 +3,7 @@ package com.sep.cinemania.Entities;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
+import jakarta.persistence.IdClass;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
@@ -15,7 +16,12 @@ import lombok.Setter;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
+@IdClass(MovieIds.class)
 public class Movie {
+    @Id
+    @Column(name = "user_id")
+    @NotBlank(message = "userId is mandatory")
+    private String userId;
     @Id
     @Column(name = "movie_id")
     @NotNull(message = "id is mandatory")
@@ -29,8 +35,8 @@ public class Movie {
     @Column(name = "vote_average")
     @NotNull(message = "voteAverage is mandatory")
     private double voteAverage;
-    @Column(name = "user_id")
-    @NotBlank(message = "userId is mandatory")
-    private String userId;
+    @Column(name = "image")
+    @NotBlank(message = "image is mandatory")
+    private String image;
 
 }

@@ -8,5 +8,5 @@ import java.util.List;
 public interface MovieService {
     List<Movie>findMoviesByUserId(String userId);
     Movie addMovie(Movie movie) throws MovieAlreadyExistException;
-    void deleteMovieById(long id);
+    void deleteMovieById(long movieId,String userId);
 }

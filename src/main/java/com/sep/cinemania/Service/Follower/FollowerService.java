@@ -11,4 +11,6 @@ public interface FollowerService {
     Follower follow(Follower follower) ;
 
     void deleteFollowerByIds(String userId,String followedId);
+
+    List<Follower> findFollowersByUserId(String userId );
 }

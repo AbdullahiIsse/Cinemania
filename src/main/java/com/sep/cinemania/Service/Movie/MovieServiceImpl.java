@@ -2,6 +2,7 @@ package com.sep.cinemania.Service.Movie;
 
 import com.sep.cinemania.Dao.Movie.MovieRepository;
 import com.sep.cinemania.Entities.Movie;
+import com.sep.cinemania.Entities.MovieIds;
 import com.sep.cinemania.Exception.Movie.MovieAlreadyExistException;
 import com.sep.cinemania.Exception.User.UserDoNotExistException;
 import com.sep.cinemania.Service.User.UserService;
@@ -32,8 +33,8 @@ public class MovieServiceImpl implements MovieService {
         if (userService.findUserById(movie.getUserId()).isEmpty()) {
             throw new UserDoNotExistException();
         }
-        movieRepository.findById(movie.getId()).ifPresent(movie1 -> {
-            if (movie.getId() == movie1.getId()) {
+        movieRepository.findById(new MovieIds(movie.getUserId(),movie.getId())).ifPresent(movie1 -> {
+            if (movie.getId()  == movie1.getId() && movie.getUserId().equals(movie1.getUserId())) {
                 throw new MovieAlreadyExistException();
             }
         });
@@ -41,7 +42,7 @@ public class MovieServiceImpl implements MovieService {
     }
 
     @Override
-    public void deleteMovieById(long id) {
-        movieRepository.deleteById(id);
+    public void deleteMovieById(long movieId,String userId) {
+        movieRepository.deleteById(new MovieIds(userId,movieId));
     }
 }

@@ -16,9 +16,9 @@ public class UserServiceImpl implements UserService {
         this.user = user;
     }
 
-    @Override
-    public List<User> getUserList() {
-        return user.findAll();
+
+    public List<User> findOtherUsersById(String id) {
+        return user.findOtherUsersById(id);
     }
 
     @Override

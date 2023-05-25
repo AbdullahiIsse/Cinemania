@@ -42,5 +42,10 @@ public class FollowerServiceImpl implements FollowerService{
         followerRepository.deleteByUserIdAndFollowedId(userId, followedId);
     }
 
+    @Override
+    public   List<Follower> findFollowersByUserId(String userId) {
+        return followerRepository.findFollowersByUserId(userId);
+    }
+
 
 }

@@ -73,5 +73,16 @@ public class FollowerController {
         }
     }
 
+    @GetMapping("/user/{userId}")
+    @Operation(summary = " Find followers by userId")
+    @ApiResponse(responseCode = "200",
+            description = "OK",
+            content = @Content(mediaType = "application/json", schema = @Schema(implementation = Follower.class))
+    )
+    public ResponseEntity<List<Follower>> findFollowerById(@PathVariable("userId") String userId) {
+            var followers = followerService.findFollowersByUserId(userId);
+            return ResponseEntity.ok(followers);
+    }
+
 
 }

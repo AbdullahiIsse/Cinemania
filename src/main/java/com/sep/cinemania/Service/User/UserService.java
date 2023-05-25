@@ -7,7 +7,7 @@ import java.util.List;
 import java.util.Optional;
 
 public interface UserService {
-    List<User> getUserList();
+    List<User> findOtherUsersById(String id);
     User createUser(User user) throws UserAlreadyExistException;
 
     User findUserByEmail(String email);

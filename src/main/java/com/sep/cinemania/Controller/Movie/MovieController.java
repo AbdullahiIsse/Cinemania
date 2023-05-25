@@ -57,15 +57,15 @@ public class MovieController {
         }
     }
 
-    @DeleteMapping("/{id}")
-    @Operation(summary = "Delete Movie by Id")
+    @DeleteMapping("/{userId}/{movieId}")
+    @Operation(summary = "Delete Movie by Ids")
     @ApiResponse(responseCode = "200",
             description = "OK",
             content = @Content(mediaType = "application/json", schema = @Schema(implementation = Movie.class))
     )
-    public void removeMoviesById(@PathVariable("id") long id) {
+    public void removeMoviesById(@PathVariable("userId") String userId,@PathVariable("movieId") long id) {
         try {
-            movieService.deleteMovieById(id);
+            movieService.deleteMovieById(id,userId);
         } catch (Exception e) {
             System.out.println(e.getMessage());
             throw new ResponseStatusException(HttpStatus.NO_CONTENT);

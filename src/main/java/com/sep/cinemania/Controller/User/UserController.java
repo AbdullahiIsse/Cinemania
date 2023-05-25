@@ -29,14 +29,14 @@ public class UserController {
         this.user = user;
     }
 
-    @GetMapping
-    @Operation(summary = "Get all the users")
+    @GetMapping("/{id}")
+    @Operation(summary = "Get all the other users by id")
     @ApiResponse(responseCode = "200",
             description = "OK",
             content = @Content(mediaType = "application/json", schema = @Schema(implementation = User.class))
     )
-    public ResponseEntity<List<User>> getUserName() {
-        List<User> users = user.getUserList();
+    public ResponseEntity<List<User>> getOtherUsersById(@PathVariable("id") String id) {
+        List<User> users = user.findOtherUsersById(id);
         return ResponseEntity.ok(users);
     }
 
