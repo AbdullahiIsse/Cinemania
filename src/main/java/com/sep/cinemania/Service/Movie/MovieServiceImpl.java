@@ -5,12 +5,11 @@ import com.sep.cinemania.Entities.Movie;
 import com.sep.cinemania.Entities.MovieIds;
 import com.sep.cinemania.Exception.Movie.MovieAlreadyExistException;
 import com.sep.cinemania.Exception.User.UserDoNotExistException;
-import com.sep.cinemania.Service.User.UserService;
+import com.sep.cinemania.Service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
-import java.util.Optional;
 
 @Service
 public class MovieServiceImpl implements MovieService {

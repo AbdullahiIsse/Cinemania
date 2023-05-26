@@ -39,4 +39,11 @@ public class Movie {
     @NotBlank(message = "image is mandatory")
     private String image;
 
+    public Movie(long id, String title, String releaseDate, double voteAverage, String image) {
+        this.id = id;
+        this.title = title;
+        this.releaseDate = releaseDate;
+        this.voteAverage = voteAverage;
+        this.image = image;
+    }
 }

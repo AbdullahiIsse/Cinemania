@@ -1,4 +1,4 @@
-package com.sep.cinemania.Service.User;
+package com.sep.cinemania.Service;
 
 import com.sep.cinemania.Entities.User;
 import com.sep.cinemania.Exception.User.UserAlreadyExistException;

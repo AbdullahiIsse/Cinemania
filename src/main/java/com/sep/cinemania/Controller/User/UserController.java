@@ -2,7 +2,7 @@ package com.sep.cinemania.Controller.User;
 
 import com.sep.cinemania.Entities.User;
 import com.sep.cinemania.Exception.User.UserAlreadyExistException;
-import com.sep.cinemania.Service.User.UserService;
+import com.sep.cinemania.Service.UserService;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.media.Content;
 import io.swagger.v3.oas.annotations.media.Schema;

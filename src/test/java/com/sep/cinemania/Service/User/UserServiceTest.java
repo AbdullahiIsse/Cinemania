@@ -1,7 +1,7 @@
 package com.sep.cinemania.Service.User;
 import com.sep.cinemania.Dao.User.UserRepository;
 import com.sep.cinemania.Entities.User;
-import com.sep.cinemania.Exception.User.UserAlreadyExistException;
+import com.sep.cinemania.Service.UserServiceImpl;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.InjectMocks;
@@ -102,8 +102,6 @@ public class UserServiceTest {
         Optional<User> actualUser = userService.findUserById(user.getId());
         assertFalse(actualUser.isPresent());
     }
-
-
 
 
 
