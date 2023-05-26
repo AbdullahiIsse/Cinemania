@@ -38,4 +38,13 @@ public class FollowerUserMovieJoin {
     @NotBlank(message = "image is mandatory")
     private String image;
 
+    public FollowerUserMovieJoin(long movieId, String displayName, String email, String title, String releaseDate, double voteAverage, String image) {
+        this.movieId = movieId;
+        this.displayName = displayName;
+        this.email = email;
+        this.title = title;
+        this.releaseDate = releaseDate;
+        this.voteAverage = voteAverage;
+        this.image = image;
+    }
 }
