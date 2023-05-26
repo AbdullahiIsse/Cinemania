@@ -1,6 +1,7 @@
 package com.sep.cinemania.Service.Follower;
 
 import com.sep.cinemania.Entities.Follower;
+import com.sep.cinemania.Entities.FollowerUserJoin;
 import com.sep.cinemania.Entities.FollowerUserMovieJoin;
 
 
@@ -13,4 +14,5 @@ public interface FollowerService {
     void deleteFollowerByIds(String userId,String followedId);
 
     List<Follower> findFollowersByUserId(String userId );
+    List<FollowerUserJoin> getFollowedUsers(String userId);
 }

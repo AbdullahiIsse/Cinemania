@@ -1,6 +1,7 @@
 package com.sep.cinemania.Controller.Follower;
 
 import com.sep.cinemania.Entities.Follower;
+import com.sep.cinemania.Entities.FollowerUserJoin;
 import com.sep.cinemania.Entities.FollowerUserMovieJoin;
 import com.sep.cinemania.Exception.Follower.FollowedUserAlreadyExist;
 import com.sep.cinemania.Service.Follower.FollowerService;
@@ -82,6 +83,17 @@ public class FollowerController {
     public ResponseEntity<List<Follower>> findFollowerById(@PathVariable("userId") String userId) {
             var followers = followerService.findFollowersByUserId(userId);
             return ResponseEntity.ok(followers);
+    }
+
+    @GetMapping("/followed/{userId}")
+    @Operation(summary = "Get Followed User List")
+    @ApiResponse(responseCode = "200",
+            description = "OK",
+            content = @Content(mediaType = "application/json", schema = @Schema(implementation = FollowerUserJoin.class))
+    )
+    public ResponseEntity<List<FollowerUserJoin>> getFollowedUser(@PathVariable("userId") String userId) {
+        var followedUsers = followerService.getFollowedUsers(userId);
+        return ResponseEntity.ok(followedUsers);
     }
 
 

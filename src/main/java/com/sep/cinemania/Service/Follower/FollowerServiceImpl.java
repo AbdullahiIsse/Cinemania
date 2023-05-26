@@ -2,7 +2,9 @@ package com.sep.cinemania.Service.Follower;
 
 import com.sep.cinemania.Dao.Follower.FollowerRepository;
 import com.sep.cinemania.Dao.Follower.FollowerUserMovieJoinRepository;
+import com.sep.cinemania.Dao.Follower.FollowerUserRepository;
 import com.sep.cinemania.Entities.Follower;
+import com.sep.cinemania.Entities.FollowerUserJoin;
 import com.sep.cinemania.Entities.FollowerUserMovieJoin;
 import com.sep.cinemania.Exception.Follower.FollowedUserAlreadyExist;
 import org.springframework.stereotype.Service;
@@ -15,10 +17,11 @@ public class FollowerServiceImpl implements FollowerService{
 
     private final FollowerUserMovieJoinRepository followerUserMovieJoinRepository;
     private final FollowerRepository followerRepository;
-
-    public FollowerServiceImpl(FollowerUserMovieJoinRepository followerUserMovieJoinRepository, FollowerRepository followerRepository) {
+    private final FollowerUserRepository followerUserRepository;
+    public FollowerServiceImpl(FollowerUserMovieJoinRepository followerUserMovieJoinRepository, FollowerRepository followerRepository, FollowerUserRepository followerUserRepository) {
         this.followerUserMovieJoinRepository = followerUserMovieJoinRepository;
         this.followerRepository = followerRepository;
+        this.followerUserRepository = followerUserRepository;
     }
 
     @Override
@@ -45,6 +48,11 @@ public class FollowerServiceImpl implements FollowerService{
     @Override
     public   List<Follower> findFollowersByUserId(String userId) {
         return followerRepository.findFollowersByUserId(userId);
+    }
+
+    @Override
+    public List<FollowerUserJoin> getFollowedUsers(String userId) {
+        return followerUserRepository.getFollowedUsers(userId);
     }
 
 
