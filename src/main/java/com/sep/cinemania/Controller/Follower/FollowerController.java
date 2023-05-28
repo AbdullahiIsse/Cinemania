@@ -97,4 +97,20 @@ public class FollowerController {
     }
 
 
+    @DeleteMapping("/email/{userId}/{email}")
+    @Operation(summary = " unFollow user by userid and email")
+    @ApiResponse(responseCode = "200",
+            description = "OK",
+            content = @Content(mediaType = "application/json", schema = @Schema(implementation = Follower.class))
+    )
+    public void removeFollowerByUserIdAndEmail(@PathVariable("userId") String userId, @PathVariable("email") String email) {
+        try {
+         followerService.deleteByUserIdAndEmail(userId, email);
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+            throw new ResponseStatusException(HttpStatus.NO_CONTENT);
+        }
+    }
+
+
 }

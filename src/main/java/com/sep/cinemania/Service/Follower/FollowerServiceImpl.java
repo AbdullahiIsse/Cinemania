@@ -55,5 +55,10 @@ public class FollowerServiceImpl implements FollowerService{
         return followerUserRepository.getFollowedUsers(userId);
     }
 
+    @Override
+    public void deleteByUserIdAndEmail(String userId, String email) {
+        followerRepository.deleteByUserIdAndEmail(userId, email);
+    }
+
 
 }

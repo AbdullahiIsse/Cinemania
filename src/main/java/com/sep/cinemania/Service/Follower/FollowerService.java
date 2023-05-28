@@ -15,4 +15,5 @@ public interface FollowerService {
 
     List<Follower> findFollowersByUserId(String userId );
     List<FollowerUserJoin> getFollowedUsers(String userId);
+    void deleteByUserIdAndEmail(String userId,String email );
 }
