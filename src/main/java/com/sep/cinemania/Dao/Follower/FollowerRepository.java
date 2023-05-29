@@ -1,7 +1,7 @@
 package com.sep.cinemania.Dao.Follower;
 
 import com.sep.cinemania.Entities.Follower;
-import com.sep.cinemania.Entities.FollowerIds;
+import com.sep.cinemania.Entities.Ids.Follower.FollowerIds;
 import jakarta.transaction.Transactional;
 import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;

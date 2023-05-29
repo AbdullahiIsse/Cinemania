@@ -1,11 +1,11 @@
 package com.sep.cinemania.Service.Movie;
 
 import com.sep.cinemania.Dao.Movie.MovieRepository;
-import com.sep.cinemania.Entities.Movie;
-import com.sep.cinemania.Entities.MovieIds;
+import com.sep.cinemania.Entities.Ids.Movie.Movie;
+import com.sep.cinemania.Entities.Ids.Movie.MovieIds;
 import com.sep.cinemania.Exception.Movie.MovieAlreadyExistException;
 import com.sep.cinemania.Exception.User.UserDoNotExistException;
-import com.sep.cinemania.Service.UserService;
+import com.sep.cinemania.Service.User.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

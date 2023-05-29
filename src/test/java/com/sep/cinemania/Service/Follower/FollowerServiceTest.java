@@ -2,12 +2,9 @@ package com.sep.cinemania.Service.Follower;
 
 import com.sep.cinemania.Dao.Follower.FollowerRepository;
 import com.sep.cinemania.Dao.Follower.FollowerUserMovieJoinRepository;
-import com.sep.cinemania.Dao.Movie.MovieRepository;
 import com.sep.cinemania.Entities.Follower;
 import com.sep.cinemania.Entities.FollowerUserMovieJoin;
-import com.sep.cinemania.Entities.Movie;
 import com.sep.cinemania.Entities.User;
-import com.sep.cinemania.Service.Movie.MovieServiceImpl;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.InjectMocks;

@@ -4,7 +4,7 @@ import com.sep.cinemania.Dao.Follower.FollowerRepository;
 import com.sep.cinemania.Dao.Follower.FollowerUserMovieJoinRepository;
 import com.sep.cinemania.Dao.Follower.FollowerUserRepository;
 import com.sep.cinemania.Entities.Follower;
-import com.sep.cinemania.Entities.FollowerUserJoin;
+import com.sep.cinemania.Entities.Ids.Follower.FollowerUserJoin;
 import com.sep.cinemania.Entities.FollowerUserMovieJoin;
 import com.sep.cinemania.Exception.Follower.FollowedUserAlreadyExist;
 import org.springframework.stereotype.Service;

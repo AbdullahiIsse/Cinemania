@@ -1,4 +1,4 @@
-package com.sep.cinemania.Entities;
+package com.sep.cinemania.Entities.Ids.Movie;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;

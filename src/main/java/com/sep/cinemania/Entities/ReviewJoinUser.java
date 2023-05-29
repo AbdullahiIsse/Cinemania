@@ -13,10 +13,25 @@ import lombok.Setter;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-public class FollowerUserJoin {
+public class ReviewJoinUser {
+
     @Id
-    @Column(name = "email")
-    private String email;
+    @Column(name = "review_id")
+    private long reviewId;
+
+    @Column(name = "rating")
+    private float rating;
+
+    @Column(name = "text")
+    private String text;
+
+    @Column(name = "timestamp")
+    private String timestamp;
+
+    @Column(name = "user_id")
+    private String userId;
+
     @Column(name = "displayname")
     private String displayName;
+
 }

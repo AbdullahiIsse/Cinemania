@@ -1,5 +1,6 @@
 package com.sep.cinemania.Entities;
 
+import com.sep.cinemania.Entities.Ids.Follower.FollowerIds;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
 import lombok.AllArgsConstructor;

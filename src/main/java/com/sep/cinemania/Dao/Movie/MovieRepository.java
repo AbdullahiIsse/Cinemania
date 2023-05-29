@@ -1,7 +1,7 @@
 package com.sep.cinemania.Dao.Movie;
 
-import com.sep.cinemania.Entities.Movie;
-import com.sep.cinemania.Entities.MovieIds;
+import com.sep.cinemania.Entities.Ids.Movie.Movie;
+import com.sep.cinemania.Entities.Ids.Movie.MovieIds;
 import jakarta.validation.constraints.NotBlank;
 import org.springframework.data.repository.CrudRepository;
 

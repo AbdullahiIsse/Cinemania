@@ -1,7 +1,6 @@
 package com.sep.cinemania.Service.User;
 import com.sep.cinemania.Dao.User.UserRepository;
 import com.sep.cinemania.Entities.User;
-import com.sep.cinemania.Service.UserServiceImpl;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.InjectMocks;

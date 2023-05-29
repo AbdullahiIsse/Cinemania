@@ -1,9 +1,7 @@
 package com.sep.cinemania.Controller.User;
 
-import com.sep.cinemania.Dao.User.UserRepository;
-import com.sep.cinemania.Entities.Movie;
 import com.sep.cinemania.Entities.User;
-import com.sep.cinemania.Service.UserService;
+import com.sep.cinemania.Service.User.UserService;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.junit.runner.RunWith;

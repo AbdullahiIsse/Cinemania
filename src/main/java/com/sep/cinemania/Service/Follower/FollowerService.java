@@ -1,7 +1,7 @@
 package com.sep.cinemania.Service.Follower;
 
 import com.sep.cinemania.Entities.Follower;
-import com.sep.cinemania.Entities.FollowerUserJoin;
+import com.sep.cinemania.Entities.Ids.Follower.FollowerUserJoin;
 import com.sep.cinemania.Entities.FollowerUserMovieJoin;
 
 

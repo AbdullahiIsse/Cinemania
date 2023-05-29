@@ -1,4 +1,4 @@
-package com.sep.cinemania.Entities;
+package com.sep.cinemania.Entities.Ids.Movie;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -6,12 +6,12 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import java.io.Serializable;
-
 @Getter
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-public class FollowerIds implements Serializable {
+public class MovieIds implements Serializable {
     private String userId;
-    private String followedId;
+    private long id;
+
 }

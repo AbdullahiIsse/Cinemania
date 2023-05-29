@@ -1,5 +1,6 @@
 package com.sep.cinemania.Entities;
 
+import com.sep.cinemania.Entities.Ids.Follower.FollowerJoinIds;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;

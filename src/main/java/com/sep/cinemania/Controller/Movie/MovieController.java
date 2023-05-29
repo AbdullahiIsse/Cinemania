@@ -1,6 +1,6 @@
 package com.sep.cinemania.Controller.Movie;
 
-import com.sep.cinemania.Entities.Movie;
+import com.sep.cinemania.Entities.Ids.Movie.Movie;
 import com.sep.cinemania.Exception.Movie.MovieAlreadyExistException;
 import com.sep.cinemania.Exception.User.UserDoNotExistException;
 import com.sep.cinemania.Service.Movie.MovieService;

@@ -1,6 +1,6 @@
 package com.sep.cinemania.Service.Movie;
 
-import com.sep.cinemania.Entities.Movie;
+import com.sep.cinemania.Entities.Ids.Movie.Movie;
 import com.sep.cinemania.Exception.Movie.MovieAlreadyExistException;
 
 import java.util.List;

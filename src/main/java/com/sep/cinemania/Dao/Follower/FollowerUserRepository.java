@@ -1,6 +1,6 @@
 package com.sep.cinemania.Dao.Follower;
 
-import com.sep.cinemania.Entities.FollowerUserJoin;
+import com.sep.cinemania.Entities.Ids.Follower.FollowerUserJoin;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
 

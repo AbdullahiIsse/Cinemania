@@ -1,4 +1,4 @@
-package com.sep.cinemania.Service;
+package com.sep.cinemania.Service.User;
 
 import com.sep.cinemania.Dao.User.UserRepository;
 import com.sep.cinemania.Entities.User;
