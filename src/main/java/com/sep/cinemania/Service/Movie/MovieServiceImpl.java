@@ -1,7 +1,7 @@
 package com.sep.cinemania.Service.Movie;
 
 import com.sep.cinemania.Dao.Movie.MovieRepository;
-import com.sep.cinemania.Entities.Ids.Movie.Movie;
+import com.sep.cinemania.Entities.Movie;
 import com.sep.cinemania.Entities.Ids.Movie.MovieIds;
 import com.sep.cinemania.Exception.Movie.MovieAlreadyExistException;
 import com.sep.cinemania.Exception.User.UserDoNotExistException;
